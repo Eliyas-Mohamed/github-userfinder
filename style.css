@@ -1,0 +1,70 @@
+body {
+  background-color: #141c2f;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.bg-primarycolor {
+  background-color: #141c2f;
+}
+
+.bg-secondarycolor {
+  background-color: #1f2a48;
+}
+
+.text-grey {
+  color: #828896;
+}
+
+.component-cover {
+  height: 380px;
+  width: 780px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -70%);
+          transform: translate(-50%, -70%);
+}
+
+.component-cover .userdetails-cover .img-cover {
+  width: 30%;
+  height: 100%;
+}
+
+.component-cover .userdetails-cover .img-cover img {
+  width: 150px;
+}
+
+.component-cover input[type="text"] {
+  width: 90%;
+  color: #fff;
+  padding: 8px;
+}
+
+.component-cover input[type="text"]::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.component-cover input[type="text"]:-ms-input-placeholder {
+  color: #fff;
+}
+
+.component-cover input[type="text"]::-ms-input-placeholder {
+  color: #fff;
+}
+
+.component-cover input[type="text"]::placeholder {
+  color: #fff;
+}
+
+.component-cover img.search-icon {
+  width: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=style.css.map */

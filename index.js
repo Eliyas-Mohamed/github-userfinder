@@ -16,10 +16,9 @@ document.getElementById('username').addEventListener('keyup',startSearch);
 //starting search
 
 function startSearch(){
-    if(document.getElementById('username').value===''){
-        ui.enterRequest();
-    }
-    else{
+    console.log(this.value)
+    if(document.getElementById('username').value!==''){
+        console.log('havalue');
         const searchValue=document.getElementById('username').value;
         github.getUser(searchValue)
        .then(data=>data)
@@ -27,14 +26,23 @@ function startSearch(){
             if(res.response.message==="Not Found"){
                 ui.undefinedAlert();
             }
+            else if(res.response.message.startsWith("API rate")) {
+                ui.limitAlert();
+            }
             else{
-                console.log(res.repos);
-                console.log(res.response);
+                
                 ui.showProfile(res.response);
+                console.log(res.repos);
                 ui.showRepos(res.repos);
             }
  })
  .catch((err)=>console.log("this",err));
+   
+        
     }
+    else{
+        console.log('novalue');
+        ui.enterRequest();
+         }
         
 }

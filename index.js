@@ -21,28 +21,23 @@ function startSearch(){
         console.log('havalue');
         const searchValue=document.getElementById('username').value;
         github.getUser(searchValue)
-       .then(data=>data)
         .then(res=>{
             if(res.response.message==="Not Found"){
                 ui.undefinedAlert();
             }
-            else if(res.response.message.startsWith("API rate")) {
-                ui.limitAlert();
-            }
-            else{
-                
-                ui.showProfile(res.response);
+            else{ 
+                console.log('uicalled');
+                console.log(res.response);
                 console.log(res.repos);
-                ui.showRepos(res.repos);
+                ui.showProfile(res.response);
+                if(res.repos.length!==0){
+                    ui.showRepos(res.repos);
+                }
+                
             }
  })
- .catch((err)=>console.log("this",err));
-   
-        
+    .catch((err)=>console.log("this",err));  
     }
-    else{
-        console.log('novalue');
-        ui.enterRequest();
-         }
+   
         
 }

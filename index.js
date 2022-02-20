@@ -7,9 +7,10 @@ const ui = new UI;
 //         img_cover.innerHTML=`<img src="${res.response.avatar_url}" class="rounded-circle" alt="user-image" srcset="">`;
 //                                         })
 //listen for user input
-if(document.getElementById('username').value===''){
-    ui.enterRequest();
-}
+
+// if(document.getElementById('username').value===''){
+//     ui.enterRequest();
+// }
 document.getElementById('username').addEventListener('keyup',startSearch);
 
 //starting search
@@ -23,14 +24,17 @@ function startSearch(){
         github.getUser(searchValue)
        .then(data=>data)
         .then(res=>{
-            console.log(res.response)
             if(res.response.message==="Not Found"){
                 ui.undefinedAlert();
             }
             else{
+                console.log(res.repos);
+                console.log(res.response);
                 ui.showProfile(res.response);
+                ui.showRepos(res.repos);
             }
  })
+ .catch((err)=>console.log("this",err));
     }
         
 }

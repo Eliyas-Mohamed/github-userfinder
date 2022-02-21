@@ -5,7 +5,7 @@ class UI{
         this.userRepos=document.getElementById('user-repodetails');
     }
     showProfile(user){
-        this.userDetails.innerHTML=`<section class="user-details">
+        this.userDetails.innerHTML=`<section class="user-details p-3">
         <div class="row">
             <div class=" img-cover col-md-3 text-center">
                 <img src="${user.avatar_url}" class="rounded-circle mb-custom-sm" alt="user-image" srcset="">
